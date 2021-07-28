@@ -1,0 +1,104 @@
+/* IDEAS FOR TONIGHT: 1) FIND A VACCINE BUTTON ON RESULTS PAGE? 
+2) NAV BUTTONS COULD BE BUTTONS TO CDC INFORMATION, POPULAR DESTINATIONS PAGE?
+3) box shadow on info cards - inspo from grades page of BCS */
+
+body {
+  background-color: #c4c4c4;
+}
+
+header {
+  margin-bottom: 30px;
+}
+
+.wrap {
+  background-color: #1779ba;
+  height: 70px;
+  padding: 10px;
+  border-bottom: 8px solid #e6e6e6;
+}
+
+.border {
+  border: 2px solid black;
+}
+
+.search {
+  width: 30%;
+  position: relative;
+  display: flex;
+}
+
+.searchTerm {
+  width: 100%;
+  border: 3px solid #e6e6e6;
+  border-right: none;
+  padding: 5px;
+  height: 36px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9dbfaf;
+}
+
+.searchTerm:focus {
+  color: black;
+}
+
+.searchButton {
+  width: 40px;
+  height: 36px;
+  border: 1px solid #e6e6e6;
+  background: #e6e6e6;
+  text-align: center;
+  color: darkgray;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.searchButton:hover {
+  color: black;
+  transition: ease-in-out 0.2s;
+}
+
+.cell {
+  padding: 5px;
+  background-color: #e6e6e6;
+}
+
+.blue-border {
+  border-radius: 8px;
+  border: 2px solid #1779ba;
+  box-shadow: 0 0 30px -5px hsl(0deg 0% 61% / 65%);
+}
+
+p.blue-border {
+  font-family: "oswald", sans-serif;
+  font-size: 2vw;
+}
+
+p {
+  font-family: "open sans", sans-serif;
+  font-size: 1.3vw;
+}
+
+h1,
+h6 {
+  font-family: "oswald", sans-serif;
+}
+
+h6 {
+  font-size: 1.75vw;
+}
+
+.info,
+.events {
+  padding: 15px;
+}
+
+hr {
+  width: 75%;
+  background-color: darkgray;
+}
+
+.carousel {
+  margin-bottom: 45px;
+}
