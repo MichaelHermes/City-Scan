@@ -1,0 +1,61 @@
+body {
+  min-height: 100vh;
+  background-image: url("https://www.seekpng.com/png/full/15-153767_usa-outline-transparent-images-usa-map-outline-png.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: contain;
+}
+
+.wrap {
+  background-color: #1779ba;
+  height: 70px;
+  padding: 10px;
+  border-bottom: 8px solid #e6e6e6;
+}
+
+.card {
+  border: 3px #1779ba solid;
+  border-radius: 5px;
+  background-color: #e6e6e6;
+}
+
+.search-button {
+  border: 2px #1779ba solid;
+  border-radius: 5px;
+  width: 50%;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.search-button:hover {
+  background-color: #1779ba;
+  border: 2px solid white;
+  transition: ease-in-out 0.2s;
+  cursor: pointer;
+  color: white;
+}
+
+h1 {
+  font-size: 12vw;
+  margin-bottom: 1.2em;
+  font-family: "oswald", sans-serif;
+}
+
+hr {
+  width: 75%;
+}
+
+.search-container {
+  margin-bottom: 75px;
+}
+
+h4 {
+  font-family: "oswald", sans-serif;
+}
+
+p,
+h3,
+.search-button {
+  font-family: "open sans", sans-serif;
+}
