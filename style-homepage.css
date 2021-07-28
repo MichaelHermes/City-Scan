@@ -9,9 +9,30 @@ body {
 
 .wrap {
   background-color: #1779ba;
-  height: 70px;
   padding: 10px;
   border-bottom: 8px solid #e6e6e6;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: end;
+  flex-direction: row;
+}
+
+header {
+  background-color: #1779ba;
+  padding: 10px;
+  border-bottom: 8px solid #e6e6e6;
+}
+
+ul > li > a {
+  color: white;
+  font-weight: bold;
+  padding: 5px;
+}
+
+ul > li > a:hover {
+  color: white;
+  background-color: #7db7de;
+  transition: ease-in-out 0.2s;
 }
 
 .card {
@@ -38,7 +59,7 @@ body {
 
 h1 {
   font-size: 12vw;
-  margin-bottom: 1.2em;
+  margin-bottom: 1em;
   font-family: "oswald", sans-serif;
 }
 
@@ -55,6 +76,7 @@ h4 {
 }
 
 p,
+button,
 h3,
 .search-button {
   font-family: "open sans", sans-serif;

@@ -1,20 +1,40 @@
 /* IDEAS FOR TONIGHT: 1) FIND A VACCINE BUTTON ON RESULTS PAGE? 
 2) NAV BUTTONS COULD BE BUTTONS TO CDC INFORMATION, POPULAR DESTINATIONS PAGE?
-3) box shadow on info cards - inspo from grades page of BCS */
+*/
+
+/* what parameters are we using for the API:
+6 highest rated restaurants per city.
+ */
 
 body {
   background-color: #c4c4c4;
 }
 
 header {
+  background-color: #1779ba;
+  padding: 10px;
+  border-bottom: 8px solid #e6e6e6;
   margin-bottom: 30px;
 }
 
-.wrap {
+li.cell {
   background-color: #1779ba;
-  height: 70px;
-  padding: 10px;
-  border-bottom: 8px solid #e6e6e6;
+  color: white;
+  font-weight: bold;
+  padding: 5px;
+}
+
+ul > li > a {
+  background-color: #1779ba;
+  color: white;
+  font-weight: bold;
+  padding: 5px;
+}
+
+ul > li > a:hover {
+  color: white;
+  background-color: #7db7de;
+  transition: ease-in-out 0.2s;
 }
 
 .border {
@@ -25,6 +45,7 @@ header {
   width: 30%;
   position: relative;
   display: flex;
+  border-radius: 10px;
 }
 
 .searchTerm {
