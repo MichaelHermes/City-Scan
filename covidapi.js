@@ -15,8 +15,14 @@ $.ajax({
 }).then(function (response) {
   console.log(response);
 
+  //selection - when form submits, use that info to fetch specific state info 
+  //display that info on the page 
   for (let i = 0; i < response.length; i++) {
     let statename = response[i]["state"];
+    let statenamelist = $("<li></li>").text(statename)
+    $("#search").append(statenamelist)
+
+
     $.ajax({
       url:
         "https://api.covidactnow.org/v2/state/" +
