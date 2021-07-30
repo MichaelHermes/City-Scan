@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City-Scan</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/motion-ui@1.2.3/dist/motion-ui.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Oswald:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+    <link rel="stylesheet" href="./style-results.css">
+</head>
+<body>
+    <header>
+        <div class="wrap">
+            <div class="search">
+               <input type="text" class="searchTerm" placeholder="search another city..">
+               <button type="submit" class="searchButton">
+                 <i class="fa fa-search"></i>
+              </button>
+            </div>
+         </div>
+    </header>
+
+    <div class="grid-container">
+        <div class="grid-x grid-margin-x text-center align-center">
+            <div class="info border cell medium-12 large-6 small-order-1 medium-order-1">
+                <h1 id="city-name">City Name</h1>
+                <div class="grid-x grid-margin-x align-middle align-center">
+                    <div class="cell medium-12 large-6">
+                        <p class="blue-border">OVERALL RISK LEVEL:<span id="risk-level"></span></p>
+                        <hr>
+                        <p class="blue-border">Daily New Cases:<span id="daily-case"></span></p>
+                        <hr>
+                        <p class="blue-border">Percent Vaccinated:<span id="perc-vax"></span></p>
+                    </div>
+                    <div class="cell medium-6 large-6 blue-border">
+                        <h6>How COVID risk is determined:</h6>
+                        <p> 
+                            A state or county’s overall risk level takes into account three metrics: daily new cases per 100K 
+                            (incidence), infection rate (Rt), and test positivity.    
+                        </p>
+                        <p><em>Daily new cases,</em> also known as “incidence” in epidemiology, is the number of 
+                            new COVID cases per day per unit of population.
+                        </p>
+                        <p><em>Infection rate</em> is the estimated number of new people each COVID-positive person 
+                            will infect.
+                        </p>
+                        <p><em>Positive test rate</em> is the percentage of COVID testing that comes back positive.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="events border cell medium-8 large-6 small-order-2 medium-order-2">
+                <div class="carousel">
+                    <img src="https://via.placeholder.com/400x250" alt="placeholder">
+                </div>
+                <h6>6 Top Local Spots in [city name]</h6>
+                    <p> 
+                        Facilisis gravida neque convallis a cras semper auctor neque. Gravida neque convallis a cras semper.
+                         Nunc sed blandit libero volutpat sed cras. Tincidunt dui ut ornare lectus sit.    
+                    </p>
+                    <p> 
+                        Facilisis gravida neque convallis a cras semper auctor neque. Gravida neque convallis a cras semper.
+                         Nunc sed blandit libero volutpat sed cras. Tincidunt dui ut ornare lectus sit.    
+                    </p>
+                    <p> 
+                        Facilisis gravida neque convallis a cras semper auctor neque. Gravida neque convallis a cras semper.
+                         Nunc sed blandit libero volutpat sed cras. Tincidunt dui ut ornare lectus sit.    
+                    </p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
+    <script>
+      $(document).foundation();
+    </script>
+</body>
+</html>
