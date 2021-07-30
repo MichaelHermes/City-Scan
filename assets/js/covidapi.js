@@ -14,39 +14,62 @@ $.ajax({
   method: "GET",
 }).then(function (response) {
   console.log(response);
-
   //selection - when form submits, use that info to fetch specific state info 
   //display that info on the page 
   for (let i = 0; i < response.length; i++) {
-    let statename = response[i]["state"];
-    let statenamelist = $("<li></li>").text(statename)
-    $("#search").append(statenamelist)
+    let stateName = response[i]["state"];
+    //change li to option value inside select element that will be made
+    let stateNameList = $("<li></li>").text(stateName)
+    //<option value="full state name">WA</option>
+    $("#search").append(stateNameList)
+  }
+
+});
+
+    //placeholder for now - change to user selected
+    let selectedState = "WA";
 
 
     $.ajax({
       url:
         "https://api.covidactnow.org/v2/state/" +
-        statename +
+        selectedState +
         ".json?apiKey=" +
         apikey,
       method: "GET",
     }).then(function (response) {
       console.log(response);
-      console.log(statename);
-      console.log(
-        "Risk Level (0=low,1=medium,2=high,3=very high,4=severe): " +
-          response["riskLevels"]["overall"]
-      );
-      console.log(
-        "Case Density (cases per 100k people)" +
-          response["metrics"]["caseDensity"]
-      );
-      console.log("New Cases " + response["actuals"]["newCases"]);
-      console.log(
-        "Vaccines Completed (% of total pop) " +
-          response["metrics"]["vaccinationsCompletedRatio"]
-      );
-      console.log("for more stats/info visit " + response["url"]);
+      console.log(selectedState);
+
+      let json = response["url"]
+      let obj = JSON.stringify(json)
+      console.log(obj)
+      let parse = JSON.parse(obj)
+      console.log(parse)
+
+      var urlresponse = json.split("/")
+      console.log(urlresponse)
+      console.log(urlresponse[4])
+      stateurl = urlresponse[4]
+      statenameurl = stateurl.split("-")
+      console.log(statenameurl)
+
+      
+
+      let riskLevel = "Risk Level (0=low,1=medium,2=high,3=very high,4=severe): " + response["riskLevels"]["overall"];
+      let riskLevelList = $("<p></p>").text(riskLevel)
+      $("#risk-level").append(riskLevelList)
+      
+      let newCases = "New Cases " + response["actuals"]["newCases"];
+      let newCasesList = $("<p></p>").text(newCases)
+      $("#daily-case").append(newCasesList)
+      
+      let vaccinatedPercent = "Vaccines Completed (% of total population) " + (response["metrics"]["vaccinationsCompletedRatio"] * 100)
+      let vaccinatedPercentList = $("<p></p>").text(vaccinatedPercent)
+      $("#perc-vax").append(vaccinatedPercentList)
+      
+      let moreInfo = "For more information visit " + response["url"]
+      let moreInfoList = $("<p></p>").text(moreInfo)
+      $("#perc-vax").after(moreInfoList)
     });
-  }
-});
+
