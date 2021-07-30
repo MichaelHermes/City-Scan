@@ -12,23 +12,23 @@
   </head>
 
   <body>
-      <header class="grid-container">
+      <header class="grid-container full">
         <ul class="grid-x grid-margin-x menu align-right">
-          <li class="cell large-3 medium-3"><a href="https://www.vaccines.gov/search/">Find A Vaccine</a></li>
-          <li class="cell large-3 medium-3"><a href="https://www.cdc.gov/coronavirus/2019-ncov/travelers/airline-toolkit.html">Air Travel Toolkit</a></li>
-          <li class="cell large-3 medium-3"><a href="https://www.cdc.gov/coronavirus/2019-ncov/travelers/map-and-travel-notices.html">International Travel</a></li>
+          <li class="cell large-6 medium-6"><a href="https://www.vaccines.gov/search/">Find A Vaccine</a></li>
         </ul>
       </header>
   
       <div class="grid-container full text-center">
         <h1>CITY SCAN</h1>
-        <h3>Where will you go?</h3>
         <div class="search-container grid-x align-middle align-center text-center">
           <div class="medium-6 large-8"> 
-            <section id="search">
-             <textarea id="search-input" placeholder="Choose a state.."></textarea>
+            <form id="search">
+              <label for="search-input">Enter a City:</label>
+              <input id="search-input" placeholder="type here..">
+              <label for="state">Choose a State:</label>
+              <select name="state-list" id="state-list"></select>
              <button id="search-button" class="search-button">Search</button>
-            </section>
+            </form>
           </div>
         </div>
       </div>
@@ -38,10 +38,10 @@
           <div class="cell small-order-2 medium-order-1 large-order-1">
             <div class="card">
               <div class="card-section">
-              <h4>Local Dining</h4>
+              <h4>Cost of Living & Commute</h4> 
               <hr>
-                <p>Cities are built around the food that brings people together. 
-                  Get a populated list of top eats and see what each state has to offer.
+                <p>Work is a big part of life, especially if commute takes longer than we want. Make your mornings easier by using City Scan to 
+                  search and compare the living costs and traffic flow.
                 </p>
               </div>
             </div>
@@ -61,10 +61,10 @@
           <div class="cell small-order-3 medium-order-3 large-order-3">
             <div class="card align-center">
               <div class="card-section">
-                <h4>Experiences</h4>
+                <h4>Housing & Healthcare</h4>
                 <hr>
-                <p>City Scan's list of events of live performances, concerts,
-                  street fairs and more will make you feel like a local in no time. 
+                <p>A safe place to live and access to healthcare are fundamental needs for all people. Access
+                   Teleport's database of over 300 data dimensions to see the ranking of each city.
                 </p>
               </div>
             </div>

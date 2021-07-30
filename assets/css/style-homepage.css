@@ -35,6 +35,12 @@ ul > li > a:hover {
   transition: ease-in-out 0.2s;
 }
 
+input {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 15px;
+}
+
 .card {
   border: 3px #1779ba solid;
   border-radius: 5px;
@@ -59,8 +65,12 @@ ul > li > a:hover {
 
 h1 {
   font-size: 12vw;
-  margin-bottom: 1em;
   font-family: "oswald", sans-serif;
+  margin-bottom: 0.3em;
+}
+
+h3 {
+  margin-bottom: 2em;
 }
 
 hr {
@@ -78,6 +88,7 @@ h4 {
 p,
 button,
 h3,
+label,
 .search-button {
   font-family: "open sans", sans-serif;
 }

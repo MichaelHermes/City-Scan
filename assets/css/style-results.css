@@ -5,6 +5,34 @@
 /* what parameters are we using for the API:
 6 highest rated restaurants per city.
  */
+.bars label {
+  padding-right: 8px;
+  font-size: 1rem;
+  width: 40%;
+  font-family: "open sans", sans-serif;
+}
+
+span {
+  padding-left: 3px;
+}
+
+progress {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 50%;
+  height: 20px;
+}
+
+progress::-webkit-progress-bar {
+  background-color: #eee;
+  border-radius: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
+
+progress::-webkit-progress-value {
+  background-color: #1779ba;
+  border-radius: 15px;
+}
 
 body {
   background-color: #c4c4c4;
@@ -31,6 +59,16 @@ ul > li > a {
   padding: 5px;
 }
 
+.image {
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+
+img {
+  max-height: 250px;
+  max-width: 400px;
+}
+
 ul > li > a:hover {
   color: white;
   background-color: #7db7de;
@@ -42,17 +80,18 @@ ul > li > a:hover {
 }
 
 .search {
-  width: 30%;
-  position: relative;
-  display: flex;
   border-radius: 10px;
 }
 
+select {
+  width: 20%;
+}
+
 .searchTerm {
-  width: 100%;
+  width: 50%;
   border: 3px solid #e6e6e6;
   border-right: none;
-  padding: 5px;
+  padding-right: 10px;
   height: 36px;
   border-radius: 5px 0 0 5px;
   outline: none;
@@ -73,6 +112,7 @@ ul > li > a:hover {
   border-radius: 0 5px 5px 0;
   cursor: pointer;
   font-size: 20px;
+  padding-left: 20px;
 }
 
 .searchButton:hover {
@@ -85,7 +125,8 @@ ul > li > a:hover {
   background-color: #e6e6e6;
 }
 
-.blue-border {
+.blue-border,
+.bars {
   border-radius: 8px;
   border: 2px solid #1779ba;
   box-shadow: 0 0 30px -5px hsl(0deg 0% 61% / 65%);
@@ -93,12 +134,12 @@ ul > li > a:hover {
 
 p.blue-border {
   font-family: "oswald", sans-serif;
-  font-size: 2vw;
+  font-size: 25px;
 }
 
 p {
   font-family: "open sans", sans-serif;
-  font-size: 1.3vw;
+  font-size: 14px;
 }
 
 h1,
@@ -107,11 +148,12 @@ h6 {
 }
 
 h6 {
-  font-size: 1.75vw;
+  font-size: 30px;
 }
 
 .info,
-.events {
+.events,
+.bars {
   padding: 15px;
 }
 
@@ -120,6 +162,7 @@ hr {
   background-color: darkgray;
 }
 
-.carousel {
-  margin-bottom: 45px;
+.teleport-breakdown {
+  margin-top: 30px;
+  font-family: "open sans", sans-serif;
 }
