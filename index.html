@@ -1,79 +1,84 @@
-<!doctype html> 
+<!doctype html>
 <html class="no-js" lang="en">
-  <head>
-    <meta charset="utf-8" /> 
-    
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>City-Scan</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Oswald:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./style-homepage.css">
-  </head>
 
-  <body>
-      <header>
-        <div class="wrap">
-       </div>
-      </header>
-  
-      <div class="grid-container full text-center">
-        <h1>CITY SCAN</h1>
-        <h3>Where will you go?</h3>
-        <div class="search-container grid-x align-middle align-center text-center">
-          <div class="medium-6 large-8"> 
-            <section id="search">
-             <textarea id="search-input" placeholder="Enter a city name.."></textarea>
-             <button id="search-button" class="search-button">Search</button>
-            </section>
+<head>
+  <meta charset="utf-8" />
+
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>City-Scan</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
+    integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Oswald:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style-homepage.css">
+</head>
+
+<body>
+  <header>
+    <div class="wrap">
+    </div>
+  </header>
+
+  <div class="grid-container full text-center">
+    <h1>CITY SCAN</h1>
+    <h3>Where will you go?</h3>
+    <div class="search-container grid-x align-middle align-center text-center">
+      <div class="medium-6 large-8">
+        <section id="search">
+          <textarea id="search-input" placeholder="Enter a city name.."></textarea>
+          <button id="search-button" class="search-button">Search</button>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-container text-center">
+    <div class="grid-x grid-margin-x align-spaced align-middle small-up-1 medium-up-3">
+      <div class="cell small-order-2 medium-order-1 large-order-1">
+        <div class="card">
+          <div class="card-section">
+            <h4>Local Dining</h4>
+            <hr>
+            <p>Cities are built around the food that brings people together.
+              Get a populated list of the cities' top eats and see what it has to offer.
+            </p>
           </div>
         </div>
       </div>
-  
-      <div class="grid-container text-center">
-        <div class="grid-x grid-margin-x align-spaced align-middle small-up-1 medium-up-3">
-          <div class="cell small-order-2 medium-order-1 large-order-1">
-            <div class="card">
-              <div class="card-section">
-              <h4>Local Dining</h4>
-              <hr>
-                <p>Cities are built around the food that brings people together. 
-                  Get a populated list of the cities' top eats and see what it has to offer.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="cell small-order-1 medium-order-2 large-order-2">
-            <div class="card">
-              <div class="card-section">
-                <h4>Latest Health Data</h4>
-                <hr>
-                <p>Read up-to-date health data including current COVID-19 vaccination rates, positive 
-                  test cases and more for each city -- make your travel decisions
-                  with peace of mind and get back to making memories and experiencing new places.
-                  </p>
-              </div>
-            </div>
-          </div>
-          <div class="cell small-order-3 medium-order-3 large-order-3">
-            <div class="card align-center">
-              <div class="card-section">
-                <h4>Experiences</h4>
-                <hr>
-                <p>City Scan's list of events of live performances, concerts,
-                  street fairs and more will make you feel like a local in no time. 
-                </p>
-              </div>
-            </div>
+      <div class="cell small-order-1 medium-order-2 large-order-2">
+        <div class="card">
+          <div class="card-section">
+            <h4>Latest Health Data</h4>
+            <hr>
+            <p>Read up-to-date health data including current COVID-19 vaccination rates, positive
+              test cases and more for each city -- make your travel decisions
+              with peace of mind and get back to making memories and experiencing new places.
+            </p>
           </div>
         </div>
       </div>
-      
-    
-    
-    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
-    <script>
-      $(document).foundation();
-    </script>
-  </body>
+      <div class="cell small-order-3 medium-order-3 large-order-3">
+        <div class="card align-center">
+          <div class="card-section">
+            <h4>Experiences</h4>
+            <hr>
+            <p>City Scan's list of events of live performances, concerts,
+              street fairs and more will make you feel like a local in no time.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="assets/js/teleport-api.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
+    integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
+  <script>
+    $(document).foundation();
+  </script>
+</body>
+
 </html>
