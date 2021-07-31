@@ -21,6 +21,7 @@ progress {
   appearance: none;
   width: 50%;
   height: 20px;
+  
 }
 
 progress::-webkit-progress-bar {
@@ -39,7 +40,7 @@ body {
 }
 
 header {
-  background-color: #1779ba;
+  background-color: #379add;
   padding: 10px;
   border-bottom: 8px solid #e6e6e6;
   margin-bottom: 30px;
@@ -49,14 +50,16 @@ li.cell {
   background-color: #1779ba;
   color: white;
   font-weight: bold;
-  padding: 5px;
+  padding: 6px;
+  box-shadow: 0 0 10px 10px;
+
 }
 
 ul > li > a {
   background-color: #1779ba;
   color: white;
   font-weight: bold;
-  padding: 5px;
+  padding: 20px;
 }
 
 .image {
@@ -77,6 +80,8 @@ ul > li > a:hover {
 
 .border {
   border: 2px solid black;
+  
+
 }
 
 .search {
@@ -96,6 +101,7 @@ select {
   border-radius: 5px 0 0 5px;
   outline: none;
   color: #9dbfaf;
+  
 }
 
 .searchTerm:focus {
@@ -117,7 +123,7 @@ select {
 
 .searchButton:hover {
   color: black;
-  transition: ease-in-out 0.2s;
+  transition: ease-in-out .5s;
 }
 
 .cell {
@@ -134,32 +140,44 @@ select {
 
 p.blue-border {
   font-family: "oswald", sans-serif;
-  font-size: 25px;
+  font-size: 20px;
 }
 
 p {
   font-family: "open sans", sans-serif;
   font-size: 14px;
+  /* background-color:rgb(239, 248, 188); */
 }
+/* p1 {
+  font-family: "open sans", sans-serif;
+  font-size: 30px; */
+  /* background-color:rgb(239, 248, 188); */
+/* } */
+
+
 
 h1,
 h6 {
   font-family: "oswald", sans-serif;
+  
 }
 
 h6 {
-  font-size: 30px;
+  font-size: 35px;
+  
 }
 
 .info,
 .events,
 .bars {
   padding: 15px;
+  box-shadow: 0 0 25px 5px;
 }
 
 hr {
   width: 75%;
   background-color: darkgray;
+  
 }
 
 .teleport-breakdown {
