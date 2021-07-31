@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>City-Scan</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
+        integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/motion-ui@1.2.3/dist/motion-ui.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Oswald:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Oswald:wght@500&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="./assets/css/style-results.css">
 </head>
+
 <body>
     <header class="grid-container full">
         <ul class="grid-x grid-margin-x menu align-right">
@@ -43,14 +46,15 @@
                     </div>
                     <div class="cell medium-6 large-6 blue-border">
                         <h6>How COVID risk is determined:</h6>
-                        <p> 
-                            A state or county’s overall risk level takes into account three metrics: daily new cases per 100K 
-                            (incidence), infection rate (Rt), and test positivity.    
+                        <p>
+                            A state or county’s overall risk level takes into account three metrics: daily new cases per
+                            100K
+                            (incidence), infection rate (Rt), and test positivity.
                         </p>
-                        <p><em>Daily new cases,</em> also known as “incidence” in epidemiology, is the number of 
+                        <p><em>Daily new cases,</em> also known as “incidence” in epidemiology, is the number of
                             new COVID cases per day per unit of population.
                         </p>
-                        <p><em>Infection rate</em> is the estimated number of new people each COVID-positive person 
+                        <p><em>Infection rate</em> is the estimated number of new people each COVID-positive person
                             will infect.
                         </p>
                         <p><em>Positive test rate</em> is the percentage of COVID testing that comes back positive.</p>
@@ -59,45 +63,50 @@
             </div>
             <div class="events border cell medium-8 large-6 small-order-2 medium-order-2">
                 <div class="image">
-                    <img src="https://via.placeholder.com/400x250" alt="placeholder">
+                    <img src="https://via.placeholder.com/400x250" alt="placeholder" id="City-Image">
                 </div>
                 <h6>Quality of Life Data: </h6>
                 <div class="grid-container bars">
                     <div class="grid-x">
-                      <div class="cell flex-container align-middle">
-                        <label for="file">Cost of Living: <span id="Living-Rate"></span>/10</label>
-                        <progress id="Living-Bar" max="10" value=""></progress>
-                      </div>
-                      <div class="cell flex-container align-middle">
-                        <label for="file">Housing: <span id="Housing-Rate"></span>/10</label>
-                        <progress id="Housing-Bar" max="10" value=""></progress>
-                      </div>
-                      <div class="cell flex-container align-middle">
-                        <label for="file">Commute: <span id="Commute-Rate"></span>/10</label>
-                        <progress id="Commute-Bar" max="10" value=""></progress>
-                      </div>
-                      <div class="cell flex-container align-middle">
-                        <label for="file">Healthcare: <span id="Healthcare-Rate"></span>/10</label>
-                        <progress id="Healthcare-Bar" max="10" value=""></progress>
-                      </div>
+                        <div class="cell flex-container align-middle">
+                            <label for="file">Cost of Living: <span id="Living-Rate"></span>/10</label>
+                            <progress id="Living-Bar" max="10" value=""></progress>
+                        </div>
+                        <div class="cell flex-container align-middle">
+                            <label for="file">Housing: <span id="Housing-Rate"></span>/10</label>
+                            <progress id="Housing-Bar" max="10" value=""></progress>
+                        </div>
+                        <div class="cell flex-container align-middle">
+                            <label for="file">Commute: <span id="Commute-Rate"></span>/10</label>
+                            <progress id="Commute-Bar" max="10" value=""></progress>
+                        </div>
+                        <div class="cell flex-container align-middle">
+                            <label for="file">Healthcare: <span id="Healthcare-Rate"></span>/10</label>
+                            <progress id="Healthcare-Bar" max="10" value=""></progress>
+                        </div>
                     </div>
                 </div>
                 <p class="teleport-breakdown">
                     Quality of Life data gathered via Teleport, which provides an up-to-date database
-                    for Planet Earth using 300+ different data dimensions from 70+ different sources, 
-                    all updated periodically. Sources include the World Bank, World Health 
-                    Organization, United Nations, Reporters Without Borders, OpenStreetMap, GeoNames, 
-                    OpenFlights, Heritage Foundation, AngelList, Airbnb, Seed-DB and others. Laws and 
-                    regulations, real estate prices and recruitment market data are also considered.   
-                </p>   
+                    for Planet Earth using 300+ different data dimensions from 70+ different sources,
+                    all updated periodically. Sources include the World Bank, World Health
+                    Organization, United Nations, Reporters Without Borders, OpenStreetMap, GeoNames,
+                    OpenFlights, Heritage Foundation, AngelList, Airbnb, Seed-DB and others. Laws and
+                    regulations, real estate prices and recruitment market data are also considered.
+                </p>
             </div>
         </div>
     </div>
-    
-    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
+        integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
     <script src="./assets/js/covidapi.js"></script>
+    <script src="assets/js/teleport-api.js"></script>
     <script>
-      $(document).foundation();
+        $(document).foundation();
     </script>
 </body>
+
 </html>

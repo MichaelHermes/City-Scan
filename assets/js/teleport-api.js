@@ -1,6 +1,7 @@
 let citySearchURL = "https://api.teleport.org/api/cities/?search=";
 let cityName = "Portland";
 let stateName = "oregon";
+let requestURL = `${citySearchURL}${cityName}`;
 
 let cityImageEl = $("#City-Image");
 let livingRateEl = $("#Living-Rate");
