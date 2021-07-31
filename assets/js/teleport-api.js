@@ -1,8 +1,4 @@
-let citySearchURL = "https://api.teleport.org/api/cities/?search=";
-let cityName = "Portland";
-let stateName = "oregon";
-let requestURL = `${citySearchURL}${cityName}`;
-
+// UI Elements
 let cityImageEl = $("#City-Image");
 let livingRateEl = $("#Living-Rate");
 let livingBarEl = $("#Living-Bar");
@@ -13,35 +9,27 @@ let commuteBarEl = $("#Commute-Bar");
 let healthcareRateEl = $("#Healthcare-Rate");
 let healthcareBarEl = $("#Healthcare-Bar");
 
-function init() {
-	let searchCriteria = getSearchCriteria();
+let citySearchURL = "https://api.teleport.org/api/cities/?search=";
 
-	let requestURL = `${citySearchURL}${cityName}`;
+// Initialize the Teleport API data on page load, using search criteria from localStorage. Begin by making a "city search" query.
+function init() {
+	let searchCriteria = getSearchCriteriaFromLocalStorage();
+	let requestURL = `${citySearchURL}${searchCriteria["City-Name"]}`;
 	console.log(requestURL);
-	//console.log(`${citySearchURL}${searchCriteria["City-Name"]}`);
+	console.log(`State: ${searchCriteria["State-Name"]}`);
 
 	$.ajax({
 		url: requestURL,
 		method: "GET",
 	})
 		.done((data, textStatus, jqXHR) => {
-			// Handle the search results on "Success".
-			let citySearchResults = data._embedded["city:search-results"];
-
-			// console.log("CitySearch: Success");
-			console.log(data);
-			// console.log("city:search-results::");
-			console.log(citySearchResults);
-
-			let USOnly = citySearchResults.filter(city => {
-				//return city.matching_full_name.includes("United States"); // TESTING ONLY
+			// Handle the search results on "Success". Start by filtering to US-only results.
+			let USOnly = data._embedded["city:search-results"].filter(city => {
 				return city.matching_full_name.endsWith("United States");
 			});
-			// console.log("US-Only search results::");
-			// console.log(USOnly);
-
 			if (USOnly.length == 0) {
-				console.error("No matching US city found in search results.");
+				console.error("Unable to locate a matching US city.");
+				// TODO: Display the alert.
 			} else if (USOnly.length == 1) {
 				// If we found just one matching US city, us it.
 				cityDetails(USOnly[0]._links["city:item"].href);
@@ -49,8 +37,7 @@ function init() {
 				// We found more than one matching US city. We need to filter by state.
 				let citiesInTargetState = USOnly.filter(city => {
 					let fullNameParts = city.matching_full_name.split(",");
-					//console.log(fullNameParts);
-
+					let stateName = searchCriteria["State-Name"].replace("_", " ");
 					// [0] = City, [1] = State, [2] = Country
 					if (
 						fullNameParts[1].trim().toLowerCase() === stateName.toLowerCase()
@@ -59,10 +46,16 @@ function init() {
 					}
 					return false;
 				});
-				console.log(citiesInTargetState);
 
-				// In the rare case (if even possible...) that multiple matching cities in the target state were returned, just use the first one.
-				cityDetails(citiesInTargetState[0]._links["city:item"].href);
+				if (citiesInTargetState.length > 0) {
+					// In the rare case (if even possible...) that multiple matching cities in the target state were returned, just use the first one.
+					cityDetails(citiesInTargetState[0]._links["city:item"].href);
+				} else {
+					console.error(
+						"Unable to locate the target city in the target state."
+					);
+					// TODO: Display the alert.
+				}
 			}
 		})
 		.fail((data, textStatus, errorThrown) => {
@@ -70,10 +63,12 @@ function init() {
 		});
 }
 
-function getSearchCriteria() {
+// Query localStorage for the search criteria supplied by the user on the index.html page.
+function getSearchCriteriaFromLocalStorage() {
 	return JSON.parse(localStorage.getItem("City Search Criteria"));
 }
 
+// Obtain city details from the target requestURL.
 function cityDetails(requestURL) {
 	//console.log(requestURL);
 	$.ajax({
@@ -81,8 +76,6 @@ function cityDetails(requestURL) {
 		method: "GET",
 	})
 		.done(data => {
-			// console.log("CityDetails: Success");
-			// console.log(data);
 			urbanAreaDetails(data._links["city:urban_area"].href);
 		})
 		.fail((data, textStatus, errorThrown) => {
@@ -90,7 +83,8 @@ function cityDetails(requestURL) {
 		});
 }
 
-/* Scores, Images */
+// Obtain urban area information from the target requestURL.
+/* Desired data points: Scores, Images */
 function urbanAreaDetails(requestURL) {
 	//console.log(requestURL);
 	$.ajax({
@@ -98,8 +92,6 @@ function urbanAreaDetails(requestURL) {
 		method: "GET",
 	})
 		.done(data => {
-			// console.log("UrbanAreasDetails: Success");
-			// console.log(data);
 			urbanAreasScores(data._links["ua:scores"].href);
 			urbanAreasImages(data._links["ua:images"].href);
 		})
@@ -108,7 +100,8 @@ function urbanAreaDetails(requestURL) {
 		});
 }
 
-/* Healthcare, Cost of Living, Commute, Housing */
+// Obtain urban area scores from the target requestURL. Populate these scores into the appropriate UI elements for display.
+/* Desired scores: Healthcare, Cost of Living, Commute, Housing */
 function urbanAreasScores(requestURL) {
 	//console.log(requestURL);
 	$.ajax({
@@ -116,9 +109,6 @@ function urbanAreasScores(requestURL) {
 		method: "GET",
 	})
 		.done(data => {
-			// console.log("UrbanAreasScores: Success");
-			// console.log(data);
-
 			let desiredScores = data.categories.filter(category => {
 				return (
 					category.name === "Healthcare" ||
@@ -127,7 +117,6 @@ function urbanAreasScores(requestURL) {
 					category.name === "Housing"
 				);
 			});
-			console.log(desiredScores);
 
 			desiredScores.forEach(score => {
 				switch (score.name) {
@@ -155,6 +144,7 @@ function urbanAreasScores(requestURL) {
 		});
 }
 
+// Obtain the city images from the target requestURL. Populate this image into the appropriate UI element for display.
 function urbanAreasImages(requestURL) {
 	//console.log(requestURL);
 	$.ajax({
@@ -162,13 +152,6 @@ function urbanAreasImages(requestURL) {
 		method: "GET",
 	})
 		.done(data => {
-			// console.log("UrbanAreasImages: Success");
-			// console.log(data);
-			// console.log("Web Image::");
-			// console.log(data.photos[0].image.web);
-			// console.log("Mobile Image::");
-			// console.log(data.photos[0].image.mobile);
-
 			cityImageEl.attr("src", data.photos[0].image.web);
 		})
 		.fail((data, textStatus, errorThrown) => {
@@ -176,6 +159,7 @@ function urbanAreasImages(requestURL) {
 		});
 }
 
+// Log details about any AJAX failure that has occurred.
 function ajaxFailure(functionName, data, textStatus, errorThrown) {
 	console.log(`${functionName}: Error`);
 	console.log(data);
