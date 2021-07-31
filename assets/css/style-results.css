@@ -201,3 +201,22 @@ hr {
   font-weight: bold;
 }
 
+.low {
+  background-color: green
+}
+
+.medium {
+  background-color: yellow
+}
+
+.high {
+  background-color: orange
+}
+
+.very-high {
+  background-color: red;
+}
+
+.severe {
+  background: darkred;
+}
