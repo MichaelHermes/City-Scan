@@ -32,15 +32,12 @@
         </ul>
     </header>
 
-
-<div data-closable class="alert-box callout warning hide">
-  <i class="fa fa-exclamation-triangle"></i> Please fill in a actual city.
-  <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
-    <span aria-hidden="true">&CircleTimes;</span>
-  </button>
-</div>
-
-
+    <div data-closable class="alert-box callout warning hide" id="alert">
+        <i class="fa fa-exclamation-triangle"></i> <span id="alert-text">Please fill in a actual city.</span>
+        <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+            <span aria-hidden="true">&CircleTimes;</span>
+        </button>
+    </div>
 
     <div class="grid-container">
         <div class="grid-x grid-margin-x text-center align-center">
@@ -76,6 +73,7 @@
                     <img src="https://via.placeholder.com/400x250" alt="placeholder" id="City-Image">
                 </div>
                 <h6>Quality of Life Data: </h6>
+                <b id="City-Name">City Name</b>
                 <div class="grid-container bars">
                     <div class="grid-x">
                         <div class="cell flex-container align-middle">

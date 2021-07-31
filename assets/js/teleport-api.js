@@ -8,15 +8,25 @@ let commuteRateEl = $("#Commute-Rate");
 let commuteBarEl = $("#Commute-Bar");
 let healthcareRateEl = $("#Healthcare-Rate");
 let healthcareBarEl = $("#Healthcare-Bar");
+let alertEl = $("#alert");
+let cityNameEl = $("#City-Name");
 
 let citySearchURL = "https://api.teleport.org/api/cities/?search=";
 
-// Initialize the Teleport API data on page load, using search criteria from localStorage. Begin by making a "city search" query.
+// Initialize the Teleport API data on page load, using search criteria from localStorage.
 function init() {
 	let searchCriteria = getSearchCriteriaFromLocalStorage();
-	let requestURL = `${citySearchURL}${searchCriteria["City-Name"]}`;
-	console.log(requestURL);
-	console.log(`State: ${searchCriteria["State-Name"]}`);
+	citySearch(searchCriteria["City-Name"], searchCriteria["State-Name"]);
+}
+
+// Query localStorage for the search criteria supplied by the user on the index.html page.
+function getSearchCriteriaFromLocalStorage() {
+	return JSON.parse(localStorage.getItem("City Search Criteria"));
+}
+
+// Obtain city search results from the target requestURL.
+function citySearch(city, state) {
+	let requestURL = `${citySearchURL}${city}`;
 
 	$.ajax({
 		url: requestURL,
@@ -28,19 +38,24 @@ function init() {
 				return city.matching_full_name.endsWith("United States");
 			});
 			if (USOnly.length == 0) {
-				console.error("Unable to locate a matching US city.");
+				console.error(`Unable to locate a matching US city. (${city})`);
 				// TODO: Display the alert.
-			} else if (USOnly.length == 1) {
+				alertEl
+					.find("#alert-text")
+					.text("Please ensure your city exists in the United States.");
+				alertEl.removeClass("hide");
+			} /* else if (USOnly.length == 1) {
 				// If we found just one matching US city, us it.
 				cityDetails(USOnly[0]._links["city:item"].href);
-			} else {
-				// We found more than one matching US city. We need to filter by state.
+			} */ else {
+				// We found one or more matching US cities. We need to filter by state.
 				let citiesInTargetState = USOnly.filter(city => {
 					let fullNameParts = city.matching_full_name.split(",");
-					let stateName = searchCriteria["State-Name"].replace("_", " ");
-					// [0] = City, [1] = State, [2] = Country
+
 					if (
-						fullNameParts[1].trim().toLowerCase() === stateName.toLowerCase()
+						// [0] = City, [1] = State, [2] = Country
+						fullNameParts[1].trim().toLowerCase() ===
+						state.replace("_", " ").toLowerCase()
 					) {
 						return city;
 					}
@@ -49,23 +64,22 @@ function init() {
 
 				if (citiesInTargetState.length > 0) {
 					// In the rare case (if even possible...) that multiple matching cities in the target state were returned, just use the first one.
+					cityNameEl.text(city);
 					cityDetails(citiesInTargetState[0]._links["city:item"].href);
 				} else {
 					console.error(
-						"Unable to locate the target city in the target state."
+						`Unable to locate the target city in the target state. (${city}, ${state})`
 					);
-					// TODO: Display the alert.
+					alertEl
+						.find("#alert-text")
+						.text("Please ensure your city exists in the selected state.");
+					alertEl.removeClass("hide");
 				}
 			}
 		})
 		.fail((data, textStatus, errorThrown) => {
 			ajaxFailure("CitySearch", data, textStatus, errorThrown);
 		});
-}
-
-// Query localStorage for the search criteria supplied by the user on the index.html page.
-function getSearchCriteriaFromLocalStorage() {
-	return JSON.parse(localStorage.getItem("City Search Criteria"));
 }
 
 // Obtain city details from the target requestURL.
