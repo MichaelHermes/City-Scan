@@ -15,12 +15,29 @@ $.ajax({
     let urlResponse = response[i]["url"].split("/")
     stateUrl = urlResponse[4].split("-")
     stateNameUrl = stateUrl[0]
-    console.log(stateNameUrl)
+    // console.log(stateNameUrl)
 
     //set option/value to state name and state abbreviation
     let stateInfoList = $("<option></option>").text(stateName)
     stateInfoList.val(stateNameUrl)
-    $("#search").append(stateInfoList)
-
+    $("#state-list").append(stateInfoList)
   }
 });
+
+$("#search").on("submit", function(event) {
+  event.preventDefault();
+  let cityInput = $("#search-input").val()
+  let stateNameSelect = $("#state-list").val()
+  let stateSelect = $("#state-list option:checked").text()
+
+  console.log(cityInput)
+  console.log(stateNameSelect)
+  console.log(stateSelect)
+
+localStorage.setItem("City Search Criteria",JSON.stringify({"City-Name": cityInput,"State-Name":stateNameSelect,"State-Abbreviation":stateSelect}))
+
+document.location.replace("./results.html")
+
+});
+
+
