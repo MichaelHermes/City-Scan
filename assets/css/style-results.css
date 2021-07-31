@@ -166,3 +166,23 @@ hr {
   margin-top: 30px;
   font-family: "open sans", sans-serif;
 }
+
+.low {
+  background-color: green
+}
+
+.medium {
+  background-color: yellow
+}
+
+.high {
+  background-color: orange
+}
+
+.very-high {
+  background-color: red;
+}
+
+.severe {
+  background: darkred;
+}
