@@ -29,15 +29,16 @@
         </ul>
     </header>
 
-
-<div data-closable class="alert-box callout warning hide">
-  <i class="fa fa-exclamation-triangle"></i> Please fill in a actual city.
-  <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
-    <span aria-hidden="true">&CircleTimes;</span>
-  </button>
-</div>
-
-
+    <div class="grid-container">
+        <div class="grid-x align-center">
+            <div data-closable class="alert-box callout warning">
+                <i class="fa fa-exclamation-triangle"></i> Unable to fulfill city search request. Please try another city.
+                <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+                  <span aria-hidden="true">&CircleTimes;</span>
+                </button>
+            </div>
+        </div>
+    </div>
 
     <div class="grid-container">
         <div class="grid-x grid-margin-x text-center align-center">
@@ -54,8 +55,8 @@
                     <div class="cell medium-6 large-6 blue-border">
                         <h6>How COVID risk is determined:</h6>
                         <p> 
-                            A state or county’s overall risk level takes into account three metrics: daily new cases per 100K 
-                            (incidence), infection rate (Rt), and test positivity.    
+                            A state or county’s overall risk level is on a 1 (low) to 5 (severe) scale. It takes into account three metrics: 
+                            daily new cases per 100K (incidence), infection rate (Rt), and test positivity.    
                         </p>
                         <p><em>Daily new cases,</em> also known as “incidence” in epidemiology, is the number of 
                             new COVID cases per day per unit of population.
