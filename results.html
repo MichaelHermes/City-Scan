@@ -13,21 +13,26 @@
     <link rel="stylesheet" href="./assets/css/style-results.css">
 </head>
 <body>
-    <header>
-        <div class="wrap">
-            <div class="search">
-               <input type="text" class="searchTerm" placeholder="search another city..">
-               <button type="submit" class="searchButton">
-                 <i class="fa fa-search"></i>
-              </button>
+    <header class="grid-container full">
+        <ul class="grid-x grid-margin-x menu align-right">
+            <div class="cell large-6 medium-6 search">
+                <form class="grid-x align-middle">
+                    <input id="search-input" type="text" class="searchTerm cell-8" placeholder="Search Another City..">
+                    <label for="state">Choose a State:</label>
+                    <select class="cell-2" name="state-list" id="state-list"></select>
+                    <button type="submit" class="searchButton">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </form>
             </div>
-         </div>
+            <li class="cell large-6 medium-6"><a href="https://www.vaccines.gov/search/">Find A Vaccine</a></li>
+        </ul>
     </header>
 
     <div class="grid-container">
         <div class="grid-x grid-margin-x text-center align-center">
             <div class="info border cell medium-12 large-6 small-order-1 medium-order-1">
-                <h1 id="city-name">City Name</h1>
+                <h1 id="state-name">State Name</h1>
                 <div class="grid-x grid-margin-x align-middle align-center">
                     <div class="cell medium-12 large-6">
                         <p class="blue-border">OVERALL RISK LEVEL:<span id="risk-level"></span></p>
@@ -53,22 +58,38 @@
                 </div>
             </div>
             <div class="events border cell medium-8 large-6 small-order-2 medium-order-2">
-                <div class="carousel">
+                <div class="image">
                     <img src="https://via.placeholder.com/400x250" alt="placeholder">
                 </div>
-                <h6>6 Top Local Spots in [city name]</h6>
-                    <p> 
-                        Facilisis gravida neque convallis a cras semper auctor neque. Gravida neque convallis a cras semper.
-                         Nunc sed blandit libero volutpat sed cras. Tincidunt dui ut ornare lectus sit.    
-                    </p>
-                    <p> 
-                        Facilisis gravida neque convallis a cras semper auctor neque. Gravida neque convallis a cras semper.
-                         Nunc sed blandit libero volutpat sed cras. Tincidunt dui ut ornare lectus sit.    
-                    </p>
-                    <p> 
-                        Facilisis gravida neque convallis a cras semper auctor neque. Gravida neque convallis a cras semper.
-                         Nunc sed blandit libero volutpat sed cras. Tincidunt dui ut ornare lectus sit.    
-                    </p>
+                <h6>Quality of Life Data: </h6>
+                <div class="grid-container bars">
+                    <div class="grid-x">
+                      <div class="cell flex-container align-middle">
+                        <label for="file">Cost of Living: <span id="Living-Rate"></span>/10</label>
+                        <progress id="Living-Bar" max="10" value=""></progress>
+                      </div>
+                      <div class="cell flex-container align-middle">
+                        <label for="file">Housing: <span id="Housing-Rate"></span>/10</label>
+                        <progress id="Housing-Bar" max="10" value=""></progress>
+                      </div>
+                      <div class="cell flex-container align-middle">
+                        <label for="file">Commute: <span id="Commute-Rate"></span>/10</label>
+                        <progress id="Commute-Bar" max="10" value=""></progress>
+                      </div>
+                      <div class="cell flex-container align-middle">
+                        <label for="file">Healthcare: <span id="Healthcare-Rate"></span>/10</label>
+                        <progress id="Healthcare-Bar" max="10" value=""></progress>
+                      </div>
+                    </div>
+                </div>
+                <p class="teleport-breakdown">
+                    Quality of Life data gathered via Teleport, which provides an up-to-date database
+                    for Planet Earth using 300+ different data dimensions from 70+ different sources, 
+                    all updated periodically. Sources include the World Bank, World Health 
+                    Organization, United Nations, Reporters Without Borders, OpenStreetMap, GeoNames, 
+                    OpenFlights, Heritage Foundation, AngelList, Airbnb, Seed-DB and others. Laws and 
+                    regulations, real estate prices and recruitment market data are also considered.   
+                </p>   
             </div>
         </div>
     </div>
