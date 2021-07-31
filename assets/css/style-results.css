@@ -1,10 +1,6 @@
-/* IDEAS FOR TONIGHT: 1) FIND A VACCINE BUTTON ON RESULTS PAGE? 
-2) NAV BUTTONS COULD BE BUTTONS TO CDC INFORMATION, POPULAR DESTINATIONS PAGE?
-*/
 
-/* what parameters are we using for the API:
-6 highest rated restaurants per city.
- */
+
+
 .bars label {
   padding-right: 8px;
   font-size: 1rem;
@@ -166,3 +162,42 @@ hr {
   margin-top: 30px;
   font-family: "open sans", sans-serif;
 }
+
+.hide{
+  display: none;
+}
+.alert-box {
+  padding-right: 3.25rem;
+  width: 100%;
+}
+
+.alert-box.callout {
+  color:black;
+  font-weight: bold;
+}
+
+.alert-box.warning {
+  border: 3px solid #cc4b37;
+  border-radius: 10px;
+  background-color: rgba(255, 174, 0, 0.815);
+}
+
+.alert-box i {
+  border: 2px solid #fefefe;
+  border-radius: 50%;
+  padding: .3em .325em;
+  margin-right: 0.5rem;
+}
+
+.alert-box .close-button {
+  color: rgba(254, 254, 254, 0.5);
+  font-size: 3rem;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  right: 1rem;
+  font-weight: bold;
+}
+
