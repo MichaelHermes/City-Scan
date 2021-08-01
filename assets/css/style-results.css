@@ -1,246 +1,251 @@
 .bars label {
-  padding-right: 8px;
-  font-size: 1rem;
-  width: 40%;
-  font-family: "open sans", sans-serif;
+	padding-right: 8px;
+	font-size: 1rem;
+	width: 40%;
+	font-family: "open sans", sans-serif;
 }
 
 progress {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 50%;
-  height: 20px;
+	-webkit-appearance: none;
+	appearance: none;
+	width: 50%;
+	height: 20px;
 }
 
 progress::-webkit-progress-bar {
-  background-color: #eee;
-  border-radius: 15px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+	background-color: #eee;
+	border-radius: 15px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
 }
 
 progress::-webkit-progress-value {
-  background-color: #1779ba;
-  border-radius: 15px;
+	background-color: #1779ba;
+	border-radius: 15px;
 }
 
 body {
-  background-color: #c4c4c4;
+	background-color: #c4c4c4;
 }
 
 header {
-  background-color: #1779ba;
-  padding: 10px;
-  border-bottom: 8px solid #e6e6e6;
-  margin-bottom: 30px;
+	background-color: #1779ba;
+	padding: 10px;
+	border-bottom: 8px solid #e6e6e6;
+	margin-bottom: 30px;
 }
 
 li.cell {
-  background-color: #1779ba;
-  color: white;
-  font-weight: bold;
-  padding: 5px;
+	background-color: #1779ba;
+	color: white;
+	font-weight: bold;
+	padding: 5px;
 }
 
 ul > li > a {
-  background-color: #1779ba;
-  color: white;
-  font-weight: bold;
-  padding: 5px;
+	background-color: #1779ba;
+	color: white;
+	font-weight: bold;
+	padding: 5px;
 }
 
 .image {
-  margin-bottom: 30px;
-  overflow: hidden;
+	margin-bottom: 30px;
+	overflow: hidden;
 }
 
 img {
-  max-height: 250px;
-  max-width: 400px;
+	max-height: 250px;
+	max-width: 400px;
 }
 
 ul > li > a:hover {
-  color: white;
-  background-color: #7db7de;
-  transition: ease-in-out 0.2s;
+	color: white;
+	background-color: #7db7de;
+	transition: ease-in-out 0.2s;
 }
 
 .border {
-  border: 2px solid black;
+	border: 2px solid black;
 }
 
 .search {
-  border-radius: 10px;
+	border-radius: 10px;
 }
 
 select {
-  width: 20%;
+	width: 20%;
 }
 
 .searchTerm {
-  width: 50%;
-  border: 3px solid #e6e6e6;
-  border-right: none;
-  padding-right: 10px;
-  height: 36px;
-  border-radius: 5px 0 0 5px;
-  outline: none;
-  color: #9dbfaf;
+	width: 50%;
+	border: 3px solid #e6e6e6;
+	border-right: none;
+	padding-right: 10px;
+	height: 36px;
+	border-radius: 5px 0 0 5px;
+	outline: none;
+	color: #9dbfaf;
 }
 
 .searchTerm:focus {
-  color: black;
+	color: black;
 }
 
 .searchButton {
-  width: 40px;
-  height: 36px;
-  border: 1px solid #e6e6e6;
-  background: #e6e6e6;
-  text-align: center;
-  color: darkgray;
-  border-radius: 0 5px 5px 0;
-  cursor: pointer;
-  font-size: 20px;
-  padding-left: 20px;
+	width: 40px;
+	height: 36px;
+	border: 1px solid #e6e6e6;
+	background: #e6e6e6;
+	text-align: center;
+	color: darkgray;
+	border-radius: 0 5px 5px 0;
+	cursor: pointer;
+	font-size: 20px;
+	padding-left: 20px;
 }
 
 .searchButton:hover {
-  color: black;
-  transition: ease-in-out 0.2s;
+	color: black;
+	transition: ease-in-out 0.2s;
 }
 
 .cell {
-  padding: 5px;
-  background-color: #e6e6e6;
+	padding: 5px;
+	background-color: #e6e6e6;
 }
 
 .blue-border,
 .bars {
-  border-radius: 8px;
-  border: 2px solid #1779ba;
-  box-shadow: 0 0 30px -5px hsl(0deg 0% 61% / 65%);
+	border-radius: 8px;
+	border: 2px solid #1779ba;
+	box-shadow: 0 0 30px -5px hsl(0deg 0% 61% / 65%);
 }
 
 p.blue-border {
-  font-family: "oswald", sans-serif;
-  font-size: 25px;
+	font-family: "oswald", sans-serif;
+	font-size: 25px;
 }
 
 p {
-  font-family: "open sans", sans-serif;
-  font-size: 14px;
+	font-family: "open sans", sans-serif;
+	font-size: 14px;
 }
 
 h1,
 h6 {
-  font-family: "oswald", sans-serif;
+	font-family: "oswald", sans-serif;
 }
 
 h6 {
-  font-size: 30px;
+	font-size: 30px;
 }
 
 .info,
 .events,
 .bars {
-  padding: 15px;
+	padding: 15px;
 }
 
 hr {
-  width: 75%;
-  background-color: darkgray;
+	width: 75%;
+	background-color: darkgray;
 }
 
 .teleport-breakdown {
-  margin-top: 30px;
-  font-family: "open sans", sans-serif;
+	margin-top: 30px;
+	font-family: "open sans", sans-serif;
 }
 
 .hide {
-  display: none;
+	display: none;
 }
 
 .alert-box {
-  padding-right: 3.25rem;
-  width: 50%;
+	padding-right: 3.25rem;
+	width: 50%;
+}
+
+/* This is the custom text for the alert. */
+#alert-message {
+	display: inline;
 }
 
 span {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
 }
 
 span p {
-  width: 40%;
-  border-radius: 5px;
-  height: 35px;
-  font-weight: bold;
-  font-family: "open sans", sans-serif;
-  font-size: 24px;
+	width: 40%;
+	border-radius: 5px;
+	height: 35px;
+	font-weight: bold;
+	font-family: "open sans", sans-serif;
+	font-size: 24px;
 }
 
 .alert-box.callout {
-  color: white;
-  font-weight: bold;
+	color: white;
+	font-weight: bold;
 }
 
 .alert-box.warning {
-  border: 3px solid #ffe208;
-  border-radius: 5px;
-  background-color: rgba(255, 174, 0, 0.2);
+	border: 3px solid #ffe208;
+	border-radius: 5px;
+	background-color: rgba(255, 174, 0, 0.2);
 }
 
 .alert-box i {
-  border: 2px solid #fefefe;
-  border-radius: 50%;
-  padding: 0.3em 0.325em;
-  margin-right: 0.5rem;
+	border: 2px solid #fefefe;
+	border-radius: 50%;
+	padding: 0.3em 0.325em;
+	margin-right: 0.5rem;
 }
 
 .alert-box .close-button {
-  color: rgba(254, 254, 254, 0.5);
-  font-size: 2rem;
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  right: 1rem;
-  font-weight: bold;
+	color: rgba(254, 254, 254, 0.5);
+	font-size: 2rem;
+	position: absolute;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+	right: 1rem;
+	font-weight: bold;
 }
 
 .low {
-  background-color: green;
-  color: white;
-  font-weight: bold;
-  font-family: "open sans", sans-serif;
+	background-color: green;
+	color: white;
+	font-weight: bold;
+	font-family: "open sans", sans-serif;
 }
 
 .medium {
-  background-color: yellow;
-  color: black;
-  font-weight: bold;
-  font-family: "open sans", sans-serif;
+	background-color: yellow;
+	color: black;
+	font-weight: bold;
+	font-family: "open sans", sans-serif;
 }
 
 .high {
-  background-color: orange;
-  color: white;
-  font-weight: bold;
-  font-family: "open sans", sans-serif;
+	background-color: orange;
+	color: white;
+	font-weight: bold;
+	font-family: "open sans", sans-serif;
 }
 
 .very-high {
-  background-color: red;
-  color: white;
-  font-weight: bold;
-  font-family: "open sans", sans-serif;
+	background-color: red;
+	color: white;
+	font-weight: bold;
+	font-family: "open sans", sans-serif;
 }
 
 .severe {
-  background: darkred;
-  color: white;
-  font-weight: bold;
-  font-family: "open sans", sans-serif;
+	background: darkred;
+	color: white;
+	font-weight: bold;
+	font-family: "open sans", sans-serif;
 }
