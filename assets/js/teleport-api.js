@@ -136,19 +136,19 @@ function urbanAreasScores(requestURL) {
 			desiredScores.forEach(score => {
 				switch (score.name) {
 					case "Cost of Living":
-						livingRateEl.text(Math.round(score.score_out_of_10));
+						livingRateEl.text(`${Math.round(score.score_out_of_10)}/10`);
 						livingBarEl.attr("value", score.score_out_of_10);
 						break;
 					case "Housing":
-						housingRateEl.text(Math.round(score.score_out_of_10));
+						housingRateEl.text(`${Math.round(score.score_out_of_10)}/10`);
 						housingBarEl.attr("value", score.score_out_of_10);
 						break;
 					case "Commute":
-						commuteRateEl.text(Math.round(score.score_out_of_10));
+						commuteRateEl.text(`${Math.round(score.score_out_of_10)}/10`);
 						commuteBarEl.attr("value", score.score_out_of_10);
 						break;
 					case "Healthcare":
-						healthcareRateEl.text(Math.round(score.score_out_of_10));
+						healthcareRateEl.text(`${Math.round(score.score_out_of_10)}/10`);
 						healthcareBarEl.attr("value", score.score_out_of_10);
 						break;
 				}
