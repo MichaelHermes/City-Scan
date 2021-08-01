@@ -27,6 +27,14 @@ function getSearchCriteriaFromLocalStorage() {
 // Obtain city search results from the target requestURL.
 function citySearch(city, state) {
 	let requestURL = `${citySearchURL}${city}`;
+	let toggleAlert = (display, message) => {
+		if (display) {
+			alertEl.find("#alert-text").text(message);
+			alertEl.removeClass("hide");
+		} else {
+			alertEl.removeAttr("style").addClass("hide");
+		}
+	};
 
 	$.ajax({
 		url: requestURL,
@@ -39,21 +47,17 @@ function citySearch(city, state) {
 			});
 			if (USOnly.length == 0) {
 				console.error(`Unable to locate a matching US city. (${city})`);
-				// TODO: Display the alert.
-				alertEl
-					.find("#alert-text")
-					.text("Please ensure your city exists in the United States.");
-				alertEl.removeClass("hide");
-			} /* else if (USOnly.length == 1) {
-				// If we found just one matching US city, us it.
-				cityDetails(USOnly[0]._links["city:item"].href);
-			} */ else {
+				toggleAlert(
+					true,
+					"Please ensure your city exists in the United States."
+				);
+			} else {
 				// We found one or more matching US cities. We need to filter by state.
 				let citiesInTargetState = USOnly.filter(city => {
 					let fullNameParts = city.matching_full_name.split(",");
 
+					// [0] = City, [1] = State, [2] = Country
 					if (
-						// [0] = City, [1] = State, [2] = Country
 						fullNameParts[1].trim().toLowerCase() ===
 						state.replace("_", " ").toLowerCase()
 					) {
@@ -63,17 +67,17 @@ function citySearch(city, state) {
 				});
 
 				if (citiesInTargetState.length > 0) {
-					// In the rare case (if even possible...) that multiple matching cities in the target state were returned, just use the first one.
 					cityNameEl.text(city);
+					toggleAlert(false);
 					cityDetails(citiesInTargetState[0]._links["city:item"].href);
 				} else {
 					console.error(
 						`Unable to locate the target city in the target state. (${city}, ${state})`
 					);
-					alertEl
-						.find("#alert-text")
-						.text("Please ensure your city exists in the selected state.");
-					alertEl.removeClass("hide");
+					toggleAlert(
+						true,
+						"Please ensure your city exists in the selected state."
+					);
 				}
 			}
 		})
@@ -179,5 +183,11 @@ function ajaxFailure(functionName, data, textStatus, errorThrown) {
 	console.log(data);
 	console.log(`TextStatus: ${textStatus}, ErrorThrown: ${errorThrown}`);
 }
+
+$("#search").on("submit", function (event) {
+	event.preventDefault();
+
+	citySearch($("#search-input").val(), $("#state-list").val());
+});
 
 init();

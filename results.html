@@ -19,7 +19,7 @@
     <header class="grid-container full">
         <ul class="grid-x grid-margin-x menu align-right">
             <div class="cell large-6 medium-6 search">
-                <form class="grid-x align-middle">
+                <form id="search" class="grid-x align-middle">
                     <input id="search-input" type="text" class="searchTerm cell-8" placeholder="Search Another City..">
                     <label for="state">Choose a State:</label>
                     <select class="cell-2" name="state-list" id="state-list"></select>
@@ -32,9 +32,9 @@
         </ul>
     </header>
 
-    <div data-closable class="alert-box callout warning hide" id="alert">
+    <div id="alert" class="alert-box callout warning hide" data-toggler=".hide">
         <i class="fa fa-exclamation-triangle"></i> <span id="alert-text">Please fill in a actual city.</span>
-        <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+        <button class="close-button" aria-label="Dismiss alert" type="button" data-toggle="alert">
             <span aria-hidden="true">&CircleTimes;</span>
         </button>
     </div>
