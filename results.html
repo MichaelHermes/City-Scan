@@ -32,17 +32,23 @@
         </ul>
     </header>
 
-    <div id="alert" class="alert-box callout warning hide" data-toggler=".hide">
-        <i class="fa fa-exclamation-triangle"></i> <span id="alert-text">Please fill in a actual city.</span>
-        <button class="close-button" aria-label="Dismiss alert" type="button" data-toggle="alert">
-            <span aria-hidden="true">&CircleTimes;</span>
-        </button>
+    <div id="alert" class="grid-container hide" data-toggler=".hide">
+        <div class="grid-x align-center">
+            <div data-closable class="alert-box callout warning">
+                <i class="fa fa-exclamation-triangle"></i> Unable to fulfill city search request. Please try another
+                city.
+                <button class="close-button" aria-label="Dismiss alert" type="button" data-toggle="alert">
+                    <span aria-hidden="true">&CircleTimes;</span>
+                </button>
+            </div>
+        </div>
     </div>
 
     <div class="grid-container">
         <div class="grid-x grid-margin-x text-center align-center">
             <div class="info border cell medium-12 large-6 small-order-1 medium-order-1">
-                <h1 id="state-name">State Name</h1>
+                <h1 id="state-name"></h1>
+                <p>For more information visit <a id="more-info" target="_blank" href=></a></p>
                 <div class="grid-x grid-margin-x align-middle align-center">
                     <div class="cell medium-12 large-6">
                         <p class="blue-border">OVERALL RISK LEVEL:<span id="risk-level"></span></p>
@@ -54,9 +60,9 @@
                     <div class="cell medium-6 large-6 blue-border">
                         <h6>How COVID risk is determined:</h6>
                         <p>
-                            A state or county’s overall risk level takes into account three metrics: daily new cases per
-                            100K
-                            (incidence), infection rate (Rt), and test positivity.
+                            A state or county’s overall risk level is on a 1 (low) to 5 (severe) scale. It takes into
+                            account three metrics:
+                            daily new cases per 100K (incidence), infection rate (Rt), and test positivity.
                         </p>
                         <p><em>Daily new cases,</em> also known as “incidence” in epidemiology, is the number of
                             new COVID cases per day per unit of population.
