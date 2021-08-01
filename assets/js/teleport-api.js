@@ -29,7 +29,7 @@ function citySearch(city, state) {
 	let requestURL = `${citySearchURL}${city}`;
 	let toggleAlert = (display, message) => {
 		if (display) {
-			alertEl.find("#alert-text").text(message);
+			alertEl.find("#alert-message").text(message);
 			alertEl.removeClass("hide");
 		} else {
 			alertEl.removeAttr("style").addClass("hide");
@@ -47,10 +47,7 @@ function citySearch(city, state) {
 			});
 			if (USOnly.length == 0) {
 				console.error(`Unable to locate a matching US city. (${city})`);
-				toggleAlert(
-					true,
-					"Please ensure your city exists in the United States."
-				);
+				toggleAlert(true, "Please enter a US city.");
 			} else {
 				// We found one or more matching US cities. We need to filter by state.
 				let citiesInTargetState = USOnly.filter(city => {
