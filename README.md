@@ -10,11 +10,10 @@ We built this project to create a single-source of information. With so many dif
 
 City-Scan was developed with an easy user interface. The landing page presents the user with an input field: "Enter a City," and a dropdown-menu: "Choose a State." Upon hitting the "Search" button, they are redirected to a results page with the populated information with the state's COVID data on one side and the city's quality of life data on the other. A search bar is at the top of the results page to search again along with a link to find the closest vaccine.
 
-!! ADD LINK TO GITHUB.IO !!
+[City Scan](https://michaelhermes.github.io/City-Scan/)
 
-Provide instructions and examples for use. Include screenshots as needed.
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
-`md ![alt text](assets/images/screenshot.png) `
+![City and state form entry with US outline background image](assets/img/City-Scan-Landing.jpg)
+![State-level COVID data next to city-level quality of life data](assets/img/City-Scan-Results.jpg)
 
 ## Credits
 
